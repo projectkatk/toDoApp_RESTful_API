@@ -1,0 +1,177 @@
+:root {
+    --listTextColor: #5c5c5c;
+    --listTextHighlightColor: #8f6344;
+    --listBackgroundColor: #ffefe3;
+    --listHoverBackgroundColor: #ffddc2ad;
+    --iconColor: #dab092;
+    --offWhite: #fafafa;
+    --unSelectedColor: #80808026;
+    --buttonBackgroundColor: #f9ccab; 
+    --inputPlaceholderColor: #808080be;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'Nunito Sans', sans-serif;
+    color: var(--listTextColor);
+}
+
+h1 {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5rem;
+}
+
+
+input, button {
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px rgba(149, 149, 149, 0.345);
+}
+
+input {
+    width: 180px;
+    margin: 10px;
+}
+
+input::placeholder {
+    color:var(--inputPlaceholderColor);
+}
+
+button {
+    background-color: var(--buttonBackgroundColor);    
+    cursor: pointer;
+    margin-bottom: 10px;
+    letter-spacing: 1.5px;
+}
+
+button:hover {
+    background-color: var(--listHoverBackgroundColor);  
+}
+
+/* List Styling */
+
+.list {
+    background-color: var(--listBackgroundColor);
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+}
+
+.list li {
+    list-style: none;
+    word-wrap: break-word;
+    flex-wrap: wrap;
+    font-size: 1.1rem;
+    border-bottom: 2px solid var(--offWhite);
+    border-collapse:collapse;
+    padding: 10px 20px;
+    position: relative;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.list li:hover {
+    background-color: var(--listHoverBackgroundColor);
+    color: var(--listTextHighlightColor);
+}
+
+.list li:last-child {
+    border: none;
+}
+
+/* Complete & Remove icons styling */
+.complete {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 50px;
+    cursor: pointer;
+    color: var(--unSelectedColor);
+}
+
+.complete:hover {
+    color: var(--iconColor);
+}
+
+.removeItem {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 0px;
+    cursor: pointer;
+    color: var(--iconColor);
+}
+
+.removeItem:hover {
+    color: var(--offWhite);
+}
+
+/* icon titles styling */
+.complete[title]:hover::after,
+.removeItem[title]:hover::after {
+    content: attr(title);
+    position: absolute;
+    top: -40%;
+    font-size: 0.5rem;
+    right: 0;    
+    color:var(--iconColor);
+}
+/* list & icon styling upon task completion */
+.markComplete {
+    color: var(--iconColor);
+}
+
+.line-through {
+    text-decoration: line-through;
+}
+
+
+/* Task Filtering */
+
+.filterTasks {
+    margin: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.filterTasks button {
+    font-size: 0.7rem;
+    color:var(--listTextColor);
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    font-size: 0.7rem; 
+    margin-top: 50px;
+   
+}
+
+footer a {
+    text-decoration: none;
+    color: var(--listTextColor);
+    background: var(--unSelectedColor);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+footer a:hover {
+    background-color: var(--offWhite);
+}
